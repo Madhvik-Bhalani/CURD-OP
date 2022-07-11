@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>warning!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        .warn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            margin-top: 7px;
+            flex-direction: column;
+        }
+        #data{
+            box-shadow: 2px 2px 2px 2px gray;
+            border-radius: 5px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+
+        }
+       
+        #data h1{
+            font-size: 35px;
+            text-transform: capitalize;
+            text-shadow: 1px 1px 1px red;
+        }
+
+        .fa-exclamation-triangle{
+            color: orangered;
+           
+            font-size: 35px;
+        }
+        .links a{
+            text-decoration: none;
+            color: white;
+            text-shadow: 1px 1px 1px black;
+            font-weight: 600;
+           transition-property: all;
+            transition-duration: .4s;
+        }
+        .links{
+             display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .links button{
+            width: 150px;
+            padding: 4px;
+            font-size: 20px;
+            background-color: rgb(80 166 255);
+            outline: none;
+            border-radius: 5px;
+            
+        }
+        button:hover a{
+            font-size: 22px;
+             text-shadow: 1.5px 1.5px 1.5px red;
+
+        }
+    </style>
+</head>
+<body>
+    {{>navbar}}
+    <div class="warn">
+        <div id="data">
+
+        <h1><i class="far fa-exclamation-triangle"></i>   do sign in first   <i class="far fa-exclamation-triangle"></i></h1>
+        <div class="links">
+    
+            <button><a href="/signin">sign in</a></button>
+        
+        </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>

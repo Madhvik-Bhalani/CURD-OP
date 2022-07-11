@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>update data</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+    {{>navbar}}
+    
+    <div class="form">
+        
+    <form action="/update" method="post">
+        <h2>update your data</h2>
+
+        <input type="email" name="mail" id="mail" placeholder="Enter Your E-mail">
+
+        <input type="password" name="pass" id="pass" placeholder="Enter Your Password">
+
+    <div class="cbox">
+
+        <input type="checkbox" name="check" id="check">
+        <h4 id="showtext">show password</h4>
+    </div>
+
+        <div class="links">
+            <a href="/signup">don't have account? sign up</a>
+            <a href="#">forget password</a>
+        </div>
+        <div class="btn">
+            <input type="submit" value="Update Now" >
+        </div>
+    </form>
+    </div>
+    {{>footer}}
+    {{!-- script for hide and show password --}}
+    <script>
+        const check=document.getElementById('check')
+        check.addEventListener("change",()=>{
+            const pass=document.getElementById('pass')
+            const showtext=document.getElementById('showtext')
+
+            if(pass.type=="password")
+            {
+                pass.type="text"
+                showtext.innerHTML=`hide password`
+
+            }
+            else{
+                pass.type="password"
+                showtext.innerHTML=`show password`
+            }
+        })
+    </script>
+</body>
+</html>
+

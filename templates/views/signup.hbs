@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body id="signupbody">
+    {{>navbar}}
+<form action="" method="post">
+
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    
+    <input type="text" name="name" placeholder="Username" />
+    <input type="text" name="mail" placeholder="E-mail" />
+    <input type="number" name="mno" placeholder="Mobile-Number" />
+    <input type="password" name="pass" placeholder="Password" id="pass" />
+    <input type="password" name="cpass" placeholder="Confirm password" id="cpass" />
+    <div class="cbox">
+
+        <input type="checkbox"  id="check">
+        <h4 id="showtext">show confirm password</h4>
+    </div>
+    
+    <input type="submit"  value="Sign me up" />
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>
+</form>
+{{>footer}}
+{{!-- hide show btn for pass and cpass --}}
+ <script>
+        const check=document.getElementById('check')
+        check.addEventListener("change",()=>{
+            const cpass=document.getElementById('cpass')
+            const showtext=document.getElementById('showtext')
+
+            if(cpass.type=="password")
+            {
+                cpass.type="text"
+                showtext.innerHTML=`hide confirm password`
+
+            }
+            else{
+                cpass.type="password"
+                showtext.innerHTML=`show confirm password`
+            }
+        })
+    </script>
+</body>
+</html>
+
